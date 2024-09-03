@@ -1,4 +1,4 @@
-# Food Delivery Service
+# Food Delivery Service with BloC, Firebase, Google Maps and Clean Architecture. 
 
 ## Screenshot of the Application 
 
