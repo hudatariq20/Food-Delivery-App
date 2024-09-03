@@ -11,6 +11,7 @@ import 'package:food_delivery_service/config/theme.dart';
 import 'package:food_delivery_service/respositories/geolocation/geolocation_repository.dart';
 import 'package:food_delivery_service/respositories/places/places_repository.dart';
 import 'package:food_delivery_service/respositories/voucher/voucher_repository.dart';
+import 'package:food_delivery_service/screens/profile/profile_screen.dart';
 import 'package:food_delivery_service/simple_bloc_observer.dart';
 
 import 'screens/screens.dart';
@@ -62,7 +63,7 @@ class MyApp extends StatelessWidget {
             theme: theme(),
             debugShowCheckedModeBanner: false,
             onGenerateRoute: AppRouter.onGenerateRoute,
-            initialRoute: LocationScreen.routeName),
+            initialRoute: HomeScreen.routeName),
       ),
     );
   }

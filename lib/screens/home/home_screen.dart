@@ -127,7 +127,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       leading: IconButton(
         icon: Icon(Icons.person),
-        onPressed: () {},//add profile page...
+        onPressed: () {
+          Navigator.pushNamed(context, '/profile');
+        }, //add profile page...
       ),
       centerTitle: false,
       title: Column(
@@ -151,6 +153,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
     );
   }
+
   @override
   Size get preferredSize => Size.fromHeight(56.0);
 }

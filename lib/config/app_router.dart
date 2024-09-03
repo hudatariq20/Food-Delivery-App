@@ -3,6 +3,7 @@ import 'package:food_delivery_service/models/price_model.dart';
 import 'package:food_delivery_service/models/restaurant_model.dart';
 import 'package:food_delivery_service/screens/edit_basket/edit_basket_screen.dart';
 import 'package:food_delivery_service/screens/home/home_screen.dart';
+import 'package:food_delivery_service/screens/profile/profile_screen.dart';
 import 'package:food_delivery_service/screens/screens.dart';
 
 class AppRouter {
@@ -24,20 +25,17 @@ class AppRouter {
       case '/deliverytime':
         return DeliveryTimeScreen.route();
       case '/filter':
-        return FilterScreen.route(
-
-        );
+        return FilterScreen.route();
       case '/restaurantDetail':
         return RestaurantDetailScreen.route(
-          restaurant : settings.arguments as Restaurant
-        );
+            restaurant: settings.arguments as Restaurant);
       case '/restaurantListing':
         return RestaurantListingScreen.route(
-          restaurants : settings.arguments as List<Restaurant>
-        );
+            restaurants: settings.arguments as List<Restaurant>);
       case '/voucher':
         return VoucherScreen.route();
-
+      case '/profile':
+        return ProfileScreen.route();
         break;
       default:
         return _errorRoute();
