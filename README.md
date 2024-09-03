@@ -1,6 +1,6 @@
 # Food Delivery Service
 
-# Screenshot of the Application 
+## Screenshot of the Application 
 ![image](https://github.com/user-attachments/assets/de63463b-e474-4ef8-9a9b-b6b88643bff3)
 ![image](https://github.com/user-attachments/assets/3f0ea687-4f2e-4638-b415-d844dacd6439)
 ![image](https://github.com/user-attachments/assets/82675fee-cb96-4e94-b09a-4ac7fca19292)
