@@ -40,6 +40,15 @@
     <td><img src="https://github.com/user-attachments/assets/1d96040d-a58d-43b1-95bf-19a587660260" width=250 height=500></td>
   </tr>
  </table>
+  <table>
+  <tr>
+    <td>Profile Page</td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/6bfec55f-3c0f-4f87-95bb-5bca26d9f332" width=250 height=500></td>
+    
+  </tr>
+ </table>
 
 
 
