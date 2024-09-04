@@ -1,6 +1,26 @@
-# Food Delivery Service with BloC, Firebase, Google Maps and Clean Architecture. 
+# Food Delivery Service with BloC, Firebase, Google Maps and Clean Architecture.
 
-## Screenshot of the Application 
+# Food Delivery Application
+
+## Project Overview
+
+This Flutter project is a feature-rich food delivery service application. It leverages BLoC for state management, Firebase for backend services, Google Maps for location-based services, and Hive for local storage of user locations. The app includes a variety of user-focused screens like Home, Categories, Filters, Restaurant Listing, Basket, Edit Basket, Voucher Apply, Profile, Checkout, and Order Confirmation.
+
+# Features
+* **BLoC State Management**: Efficient state management using BLoC pattern across the app.
+* **Firebase Integration**: Backend services powered by Firebase for real-time data handling and user authentication.
+* **Google Maps Integration**: Location services integrated with Google Maps, Places API, and Autocomplete API.
+* **Hive Local Storage**: Stores user-selected locations locally on the device for quick access and offline functionality.
+* **Home Screen**: Displays categories, top-rated restaurants, and delivery offers.
+* **Restaurant Listing Screen**: Shows a list of restaurants based on the selected location and filters.
+* **Filters Screen**: Enables filtering of restaurants by category, price, and special offers.
+* **Basket Screen**: Manages selected items, with options to edit basket contents.
+* **Edit Basket Screen**: Allows modifications to items in the basket, such as quantity changes.
+* **Voucher Apply Screen**: Fetches and applies vouchers from Firebase.
+* **Profile Screen**: Allows users to manage their profile, edit the profile, update user location
+* **Order Confirmation Screen**: Displays a summary of the order with estimated delivery time.
+
+## Application Screenshots
 
 <table>
   <tr>
