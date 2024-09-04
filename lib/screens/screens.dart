@@ -7,3 +7,4 @@ export 'filter/filter_screen.dart';
 export 'restaurant_detail/restaurant_detail_screen.dart';
 export 'restaurant_listing/restaurant_listing_screen.dart';
 export 'voucher/voucher_screen.dart';
+export 'profile/profile_screen.dart';

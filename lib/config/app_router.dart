@@ -3,6 +3,7 @@ import 'package:food_delivery_service/models/price_model.dart';
 import 'package:food_delivery_service/models/restaurant_model.dart';
 import 'package:food_delivery_service/screens/edit_basket/edit_basket_screen.dart';
 import 'package:food_delivery_service/screens/home/home_screen.dart';
+import 'package:food_delivery_service/screens/onboarding/onboarding_screen.dart';
 import 'package:food_delivery_service/screens/profile/profile_screen.dart';
 import 'package:food_delivery_service/screens/screens.dart';
 
@@ -12,6 +13,8 @@ class AppRouter {
     switch (settings.name) {
       case '/':
         return HomeScreen.route();
+      case '/on-boarding':
+        return OnboardingScreen.route();
       case '/home':
         return HomeScreen.route();
       case '/location':

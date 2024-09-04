@@ -11,6 +11,7 @@ import 'package:food_delivery_service/config/theme.dart';
 import 'package:food_delivery_service/respositories/geolocation/geolocation_repository.dart';
 import 'package:food_delivery_service/respositories/places/places_repository.dart';
 import 'package:food_delivery_service/respositories/voucher/voucher_repository.dart';
+import 'package:food_delivery_service/screens/onboarding/onboarding_screen.dart';
 import 'package:food_delivery_service/screens/profile/profile_screen.dart';
 import 'package:food_delivery_service/simple_bloc_observer.dart';
 
@@ -49,21 +50,22 @@ class MyApp extends StatelessWidget {
                   geoLocationRepository: context.read<GeoLocationRepository>())
                 ..add(LoadMap()))),
           BlocProvider(create: (context) => FilterBloc()..add(LoadFilter())),
-           BlocProvider(
-            create: (context) => VouchersBloc(voucherRepository: VoucherRepository())..add(LoadVoucher()),
-           
+          BlocProvider(
+            create: (context) =>
+                VouchersBloc(voucherRepository: VoucherRepository())
+                  ..add(LoadVoucher()),
           ),
-          BlocProvider(create: ((context) => BasketBloc(
-            vouchersBloc: BlocProvider.of<VouchersBloc>(context)
-          )..add(StartBasket()))),
-         
+          BlocProvider(
+              create: ((context) => BasketBloc(
+                  vouchersBloc: BlocProvider.of<VouchersBloc>(context))
+                ..add(StartBasket()))),
         ],
         child: MaterialApp(
             title: 'Flutter Demo',
             theme: theme(),
             debugShowCheckedModeBanner: false,
             onGenerateRoute: AppRouter.onGenerateRoute,
-            initialRoute: HomeScreen.routeName),
+            initialRoute: OnboardingScreen.routeName),
       ),
     );
   }
