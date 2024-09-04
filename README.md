@@ -8,7 +8,7 @@ This Flutter project is a feature-rich food delivery service application. It lev
 
 # Features
 * **BLoC State Management**: Efficient state management using BLoC pattern across the app.
-* **Firebase Integration**: Backend services powered by Firebase for real-time data handling and user authentication.
+* **Firebase Integration**: Backend services powered by Firebase for real-time data handling.
 * **Google Maps Integration**: Location services integrated with Google Maps, Places API, and Autocomplete API.
 * **Hive Local Storage**: Stores user-selected locations locally on the device for quick access and offline functionality.
 * **Home Screen**: Displays categories, top-rated restaurants, and delivery offers.
