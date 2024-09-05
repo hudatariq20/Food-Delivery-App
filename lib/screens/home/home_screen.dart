@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:food_delivery_service/bloc/location/location_bloc.dart';
 import 'package:food_delivery_service/models/category_model.dart';
 import 'package:food_delivery_service/models/price_model.dart';
 import 'package:food_delivery_service/models/promo_model.dart';
@@ -132,24 +134,36 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         }, //add profile page...
       ),
       centerTitle: false,
-      title: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'Current Location',
-            style: Theme.of(context)
-                .textTheme
-                .bodyLarge!
-                .copyWith(color: Colors.white),
-          ),
-          Text(
-            'Imperial Residence, JVT',
-            style: Theme.of(context)
-                .textTheme
-                .titleLarge!
-                .copyWith(color: Colors.white),
-          )
-        ],
+      title: BlocBuilder<LocationBloc, LocationState>(
+        builder: (context, state) {
+          if (state is LocationLoading) {
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          } else if (state is LocationLoaded) {
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Current Location',
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyLarge!
+                      .copyWith(color: Colors.white),
+                ),
+                Text(
+                  state.place.name,
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleLarge!
+                      .copyWith(color: Colors.white),
+                )
+              ],
+            );
+          } else {
+            return Text('Something went wrong');
+          }
+        },
       ),
     );
   }

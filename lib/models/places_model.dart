@@ -1,10 +1,17 @@
 
 import 'package:equatable/equatable.dart';
+import 'package:hive/hive.dart';
+part 'places_model.g.dart';
 
+@HiveType(typeId: 0)
 class Place extends Equatable {
+  @HiveField(0)
   final String placeId;
+  @HiveField(1)
   final String name;
+  @HiveField(2)
   final double lat;
+  @HiveField(3)
   final double lon;
 
   Place({

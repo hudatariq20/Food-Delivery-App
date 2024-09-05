@@ -42,7 +42,7 @@ class LocationScreen extends StatelessWidget {
                           .add(LoadMap(controller: controller));
                     }),
                     initialCameraPosition: CameraPosition(
-                        target: LatLng(state.lat, state.lan), zoom: 15)),
+                        target: LatLng(state.place.lat, state.place.lon), zoom: 12)),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 50.0, left: 20, right: 20),

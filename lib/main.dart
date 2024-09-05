@@ -8,18 +8,23 @@ import 'package:food_delivery_service/bloc/filter/filter_bloc.dart';
 import 'package:food_delivery_service/bloc/voucher/vouchers_bloc.dart';
 import 'package:food_delivery_service/config/app_router.dart';
 import 'package:food_delivery_service/config/theme.dart';
+import 'package:food_delivery_service/models/places_model.dart';
 import 'package:food_delivery_service/respositories/geolocation/geolocation_repository.dart';
+import 'package:food_delivery_service/respositories/local_storage/local_storage_repository.dart';
 import 'package:food_delivery_service/respositories/places/places_repository.dart';
 import 'package:food_delivery_service/respositories/voucher/voucher_repository.dart';
 import 'package:food_delivery_service/screens/onboarding/onboarding_screen.dart';
 import 'package:food_delivery_service/screens/profile/profile_screen.dart';
 import 'package:food_delivery_service/simple_bloc_observer.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 import 'screens/screens.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  await Hive.initFlutter();
+  Hive.registerAdapter(PlaceAdapter());
   BlocOverrides.runZoned(() => runApp(const MyApp()),
       blocObserver: SimpleBlocObserver());
 }
@@ -35,8 +40,8 @@ class MyApp extends StatelessWidget {
             create: ((_) => PlacesRepository())),
         RepositoryProvider<GeoLocationRepository>(
             create: ((_) => GeoLocationRepository())),
-        // RepositoryProvider<VoucherRepository>
-        //       (create: (_) => VoucherRepository(firebaseFirestore: firebaseFirestore))
+        RepositoryProvider<LocalStorageRepository>(
+            create: ((_) => LocalStorageRepository()))
       ],
       child: MultiBlocProvider(
         providers: [
@@ -47,7 +52,9 @@ class MyApp extends StatelessWidget {
           BlocProvider(
               create: ((context) => LocationBloc(
                   placesRepository: context.read<PlacesRepository>(),
-                  geoLocationRepository: context.read<GeoLocationRepository>())
+                  geoLocationRepository: context.read<GeoLocationRepository>(),
+                  localStorageRepository:
+                      context.read<LocalStorageRepository>())
                 ..add(LoadMap()))),
           BlocProvider(create: (context) => FilterBloc()..add(LoadFilter())),
           BlocProvider(
@@ -65,7 +72,7 @@ class MyApp extends StatelessWidget {
             theme: theme(),
             debugShowCheckedModeBanner: false,
             onGenerateRoute: AppRouter.onGenerateRoute,
-            initialRoute: OnboardingScreen.routeName),
+            initialRoute: LocationScreen.routeName),
       ),
     );
   }
